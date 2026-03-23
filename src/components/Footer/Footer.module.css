@@ -1,0 +1,68 @@
+/* src/components/Footer/Footer.module.css */
+
+.footer {
+  background: rgba(59, 34, 24, 0.98);
+}
+
+.bottom {
+  padding: 22px 0 26px;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 26px;
+  margin-top: 8px;
+}
+
+.col {
+  color: #fff;
+}
+
+.head {
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+.a:hover {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* ✅ FIX: center icons inside their boxes */
+.icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.copy {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+}

@@ -1,0 +1,423 @@
+/* src/pages/Home/HomePage.module.css */
+
+.hero {
+  position: relative;
+  min-height: 560px;
+  background-size: cover;
+  background-position: 50% 18%;
+  border-bottom: 1px solid var(--border);
+}
+
+/* add a subtle dark overlay on the left for text legibility (like the design) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 12, 10, 0.55) 0%,
+    rgba(18, 12, 10, 0.28) 35%,
+    rgba(18, 12, 10, 0.05) 60%,
+    rgba(18, 12, 10, 0.0) 100%
+  );
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+}
+
+.heroLeft {
+  max-width: 560px;
+  padding: 58px 0 120px;
+}
+
+.h1 {
+  margin: 0 0 12px;
+  font-size: 54px;
+  line-height: 1.02;
+  color: rgba(255, 253, 208, 0.92);
+  text-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.of {
+  font-weight: 700;
+}
+
+.ankara {
+  color: var(--gold);
+  font-family: "Georgia", "Times New Roman", serif;
+  font-style: italic;
+}
+
+.heroSub {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 16px;
+  max-width: 420px;
+}
+
+/* White wave divider */
+.wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 135px;
+
+  background: radial-gradient(120% 140% at 50% 0%, rgba(255, 255, 255, 0) 40%, var(--cream) 41%),
+    linear-gradient(var(--cream), var(--cream));
+  clip-path: ellipse(70% 60% at 50% 100%);
+  z-index: 2;
+}
+
+/* Category circles anchored on top of the wave */
+.catsWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  z-index: 3;
+}
+
+.cats {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.cat {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+
+  /* ✅ Change #1: give a bit more width so bigger circles don't feel cramped */
+  width: 160px;
+}
+
+.catCircle {
+  /* ✅ Change #1: increase circle size */
+  width: 110px;
+  height: 110px;
+
+  border-radius: 999px;
+  overflow: hidden;
+
+  /* keep the same look, just scale border a touch */
+  border: 0px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 18px 34px rgba(59, 34, 24, 0.18);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.catImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.catTitle {
+  font-weight: 900;
+  color: var(--cocoa);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Sections */
+.section {
+  padding: 56px 0 10px;
+}
+
+/* These are the “lines” you asked to keep visible */
+.titleRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.hr {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(199, 154, 59, 0.0),
+    rgba(199, 154, 59, 0.55),
+    rgba(199, 154, 59, 0.0)
+  );
+  border-radius: 999px;
+}
+
+.titleStack {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 34px;
+  color: var(--cocoa);
+  letter-spacing: 0.2px;
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.sectionSub {
+  margin: 6px auto 0;
+  text-align: center;
+  max-width: 720px;
+  color: rgba(42, 42, 42, 0.75);
+  font-size: 14px;
+}
+
+.zinarieAccent {
+  color: var(--orange);
+  font-style: italic;
+}
+
+/* Explore grid */
+.collectionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.collectionCard {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 34px rgba(59, 34, 24, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.collectionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 44px rgba(59, 34, 24, 0.12);
+}
+
+.collectionImgWrap {
+  position: relative;
+  height: 120px;
+  background: rgba(59, 34, 24, 0.04);
+}
+
+.collectionImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collectionOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55));
+}
+
+.collectionMeta {
+  padding: 12px 12px 14px;
+}
+
+.collectionTitle {
+  font-weight: 900;
+  color: #fff;
+  margin-top: -42px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.collectionPrice {
+  font-size: 13px;
+  color: rgba(42, 42, 42, 0.7);
+  margin-top: 10px;
+}
+
+.collectionLink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--orange);
+  font-weight: 900;
+}
+
+/* =========================
+   WHY ZINARIE SECTION
+   ========================= */
+.why {
+  padding: 34px 0 10px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+
+  /* flat / clean like UI */
+  padding: 12px 0;
+  border-top: 1px solid rgba(59, 34, 24, 0.08);
+  border-bottom: 1px solid rgba(59, 34, 24, 0.08);
+}
+
+.whyDivider {
+  width: 1px;
+  height: 56px;
+  background: rgba(59, 34, 24, 0.14);
+}
+
+.whyCard {
+  /* remove boxed look */
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+
+  text-align: center;
+}
+
+.whyIconWrap {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  align-items: center;
+  justify-content: center;
+
+  /* light accent like UI */
+  background: rgba(229, 106, 46, 0.08);
+  border: 1px solid rgba(229, 106, 46, 0.18);
+}
+
+.whyIcon {
+  /* react-icons use font-size */
+  font-size: 20px;
+  color: #2f7f73; /* close to the UI’s green-ish icons */
+}
+
+.whyTitle {
+  margin-top: 10px;
+  font-weight: 900;
+  color: var(--cocoa);
+}
+
+.whySub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(42, 42, 42, 0.72);
+}
+
+/* =========================
+   CUSTOMER FAVORITES (unchanged)
+   ========================= */
+
+.favs {
+  position: relative;
+  padding: 44px 0 90px;
+}
+
+.favs::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: min(1400px, calc(100vw - 24px));
+  height: 120px;
+  background: var(--cream);
+  clip-path: ellipse(78% 70% at 50% 0%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.favRow {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.favCard {
+  position: relative;
+  z-index: 2;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(59, 34, 24, 0.12);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 22px rgba(59, 34, 24, 0.1);
+}
+
+.favImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: 50% 18%;
+  display: block;
+}
+
+.favCta {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .cats {
+    gap: 14px;
+  }
+
+  .cat {
+    width: 130px;
+  }
+
+  .catCircle {
+    width: 98px;
+    height: 98px;
+    border-width: 6px;
+  }
+
+  .collectionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+    border: none;
+    padding: 0;
+  }
+
+  .whyDivider {
+    display: none;
+  }
+
+  .favRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favImg {
+    height: 240px;
+  }
+
+  .favs::after {
+    width: calc(100vw - 24px);
+  }
+}
+
+@media (max-width: 520px) {
+  .favRow {
+    grid-template-columns: 1fr;
+  }
+
+  .favImg {
+    height: 260px;
+  }
+}
