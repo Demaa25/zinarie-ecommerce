@@ -1,4 +1,4 @@
-/* src/pages/Login/LoginPage.module.css */
+/* src/pages/Register/RegisterPage.module.css */
 
 /* HERO */
 
@@ -13,18 +13,17 @@
   align-items: center;
 }
 
-.hero span {
-  font-family: "Georgia", serif;
-  font-style: italic;
-  color: var(--cream);
-}
-
 .hero h1 {
   font-size: 42px;
   margin: 0 0 8px;
-  text-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   color: rgba(233, 212, 188, 0.98);
   font-family: Georgia, serif;
+}
+
+.hero span {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  color: var(--gold);
 }
 
 .hero p {
@@ -44,7 +43,7 @@
   margin: 0 8px;
 }
 
-/* LOGIN CARD */
+/* CARD */
 
 .wrapper {
   display: flex;
@@ -53,7 +52,7 @@
 }
 
 .card {
-  width: 520px;
+  width: 560px;
   background: white;
   padding: 40px;
   border-radius: 14px;
@@ -61,15 +60,21 @@
 }
 
 .card h2 {
-  font-size: 32px;
-  margin-bottom: 6px;
   text-align: center;
+  font-size: 32px;
   font-family: Georgia, serif;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 6px;
+  color: #7a6f66;
+  margin-bottom: 20px;
 }
 
 .card label {
   display: block;
-  margin-top: 20px;
+  margin-top: 18px;
   margin-bottom: 6px;
   font-weight: 500;
 }
@@ -82,7 +87,7 @@
   font-size: 14px;
 }
 
-.loginBtn {
+.registerBtn {
   width: 100%;
   margin-top: 26px;
   padding: 14px;
@@ -94,7 +99,7 @@
   cursor: pointer;
 }
 
-.loginBtn:hover {
+.registerBtn:hover {
   opacity: .95;
 }
 
@@ -105,8 +110,43 @@
 }
 
 .footer a {
+  margin-left: 8px;
   color: #d85b16;
   font-weight: 600;
-  margin-left: 6px;
   text-decoration: none;
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+
+.field label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.field input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #e4dcd4;
+  font-size: 14px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #e66a2c;
+  box-shadow: 0 0 0 2px rgba(230,106,44,0.1);
 }

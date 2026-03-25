@@ -11,6 +11,7 @@ import FaqsPage from "./pages/Faqs/FaqsPage";
 import CartPage from "./pages/Cart/CartPage";
 import WishlistPage from "./pages/Wishlist/WishlistPage";
 import LoginPage from "./pages/Login/LoginPage";
+import RegisterPage from "./pages/Register/RegisterPage";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/wishlist" element={<  WishlistPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
